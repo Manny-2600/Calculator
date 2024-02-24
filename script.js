@@ -1,20 +1,21 @@
-const operator = prompt('Enter operator ');
 
-const number1 = parseFloat(prompt('Enter first number: '));
-const number2 = parseFloat(prompt('Enter second number: '));
+    
 
-if (operator == '+') {
-result = number1 + number2;
+
+let doc = document
+console.log(doc)
+let calc = document.getElementById('calculator')
+console.log(calc)
+
+function appendToDisplay(value){
+    document.getElementById('display').value += value;
 }
-else if (operator == '-') {
-result = number1 - number2;
-}
-else if (operator == '*') {
-result = number1 * number2;
-}
-else {
-result = number1 / number2;
+function clearDisplay(){
+    document.getElementById('display').value = '';
 }
 
 
-console.log(`${number1} ${operator} ${number2} = ${result}`);
+function calculateResult(){
+    var result = eval( document.getElementById('display').value)
+    document.getElementById('display').value = result;
+}
